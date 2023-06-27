@@ -1,0 +1,240 @@
+2023-06-27 13:57:09.565  INFO 22740 --- [restartedMain] net.tech.todo.TodoApplication            : Starting TodoApplication using Java 17.0.5 on eren with PID 22740 (C:\Users\isaer\Desktop\Cloneprojct\TodoBackend\target\classes started by isaer in C:\Users\isaer\Desktop\Cloneprojct\TodoBackend)
+2023-06-27 13:57:09.567  INFO 22740 --- [restartedMain] net.tech.todo.TodoApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-06-27 13:57:09.657  INFO 22740 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-27 13:57:09.658  INFO 22740 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-27 13:57:11.763  INFO 22740 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-27 13:57:11.869  INFO 22740 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 92 ms. Found 4 JPA repository interfaces.
+2023-06-27 13:57:12.707  INFO 22740 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3333 (http)
+2023-06-27 13:57:12.718  INFO 22740 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-27 13:57:12.719  INFO 22740 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-06-27 13:57:12.826  INFO 22740 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-27 13:57:12.827  INFO 22740 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3167 ms
+2023-06-27 13:57:12.875  INFO 22740 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-06-27 13:57:13.163  INFO 22740 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-06-27 13:57:13.173  INFO 22740 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/todo_db?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false'
+2023-06-27 13:57:14.873  INFO 22740 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-27 13:57:15.335 DEBUG 22740 --- [restartedMain] o.springframework.web.filter.CorsFilter  : Filter 'corsFilter' configured for use
+2023-06-27 13:57:15.619  WARN 22740 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-27 13:57:15.703 DEBUG 22740 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 20 mappings in 'requestMappingHandlerMapping'
+2023-06-27 13:57:16.081  INFO 22740 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@c5b2817, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@683a8a31, org.springframework.security.web.context.SecurityContextPersistenceFilter@1324831c, org.springframework.security.web.header.HeaderWriterFilter@52ad7bc8, org.springframework.web.filter.CorsFilter@216c75f6, org.springframework.security.web.authentication.logout.LogoutFilter@8b0ae4c, net.tech.todo.config.JwtFilter@58accc31, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@aabcd73, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4a33b304, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@921df90, org.springframework.security.web.session.SessionManagementFilter@38d3d35c, org.springframework.security.web.access.ExceptionTranslationFilter@703505cb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4fcef544]
+2023-06-27 13:57:16.211  INFO 22740 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-06-27 13:57:16.218 DEBUG 22740 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2023-06-27 13:57:16.265 DEBUG 22740 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+2023-06-27 13:57:16.282 DEBUG 22740 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui/**] in 'resourceHandlerMapping'
+2023-06-27 13:57:16.291 DEBUG 22740 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2023-06-27 13:57:16.508  INFO 22740 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3333 (http) with context path ''
+2023-06-27 13:57:16.930  INFO 22740 --- [restartedMain] net.tech.todo.TodoApplication            : Started TodoApplication in 8.382 seconds (JVM running for 10.145)
+2023-06-27 13:57:20.969  INFO 22740 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 47 class path changes (0 additions, 46 deletions, 1 modification)
+2023-06-27 13:57:20.993  INFO 22740 --- [Thread-4] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-06-27 13:57:21.017  INFO 22740 --- [Thread-4] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-27 13:57:21.023  INFO 22740 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-06-27 13:57:21.042  INFO 22740 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-06-27 13:57:21.172  INFO 22740 --- [restartedMain] net.tech.todo.TodoApplication            : Starting TodoApplication using Java 17.0.5 on eren with PID 22740 (C:\Users\isaer\Desktop\Cloneprojct\TodoBackend\target\classes started by isaer in C:\Users\isaer\Desktop\Cloneprojct\TodoBackend)
+2023-06-27 13:57:21.181  INFO 22740 --- [restartedMain] net.tech.todo.TodoApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-06-27 13:57:21.722  INFO 22740 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-27 13:57:21.724  INFO 22740 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 0 ms. Found 0 JPA repository interfaces.
+2023-06-27 13:57:21.914  INFO 22740 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3333 (http)
+2023-06-27 13:57:21.916  INFO 22740 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-27 13:57:21.918  INFO 22740 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-06-27 13:57:21.971  INFO 22740 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-27 13:57:21.972  INFO 22740 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 786 ms
+2023-06-27 13:57:22.006  INFO 22740 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2023-06-27 13:57:22.013  INFO 22740 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2023-06-27 13:57:22.014  INFO 22740 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/todo_db?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false'
+2023-06-27 13:57:22.240  INFO 22740 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-27 13:57:22.358  WARN 22740 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-27 13:57:22.387 DEBUG 22740 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 7 mappings in 'requestMappingHandlerMapping'
+2023-06-27 13:57:22.477  INFO 22740 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-06-27 13:57:22.484 DEBUG 22740 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2023-06-27 13:57:22.505 DEBUG 22740 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+2023-06-27 13:57:22.513 DEBUG 22740 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui/**] in 'resourceHandlerMapping'
+2023-06-27 13:57:22.521 DEBUG 22740 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2023-06-27 13:57:22.557  WARN 22740 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 2c808c21-d797-4d59-b954-941c3e6aaeeb
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-06-27 13:57:22.584  INFO 22740 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@50da61f7, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6862e5df, org.springframework.security.web.context.SecurityContextPersistenceFilter@248d0be7, org.springframework.security.web.header.HeaderWriterFilter@1c7ba6c4, org.springframework.security.web.csrf.CsrfFilter@76242a08, org.springframework.security.web.authentication.logout.LogoutFilter@3ff22987, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@71241d3f, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@6ff43dee, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@5a8a1eb0, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7469a06, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2d0a94e6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6c865a05, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@69af294d, org.springframework.security.web.session.SessionManagementFilter@73ae0bf0, org.springframework.security.web.access.ExceptionTranslationFilter@38662d15, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@59974e48]
+2023-06-27 13:57:22.626  INFO 22740 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3333 (http) with context path ''
+2023-06-27 13:57:22.687  INFO 22740 --- [restartedMain] net.tech.todo.TodoApplication            : Started TodoApplication in 1.572 seconds (JVM running for 15.901)
+2023-06-27 13:57:22.703  INFO 22740 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   SpringBootWebSecurityConfiguration.SecurityFilterChainConfiguration matched:
+      - AllNestedConditions 2 matched 0 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter,org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) did not find any beans; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+
+   SpringBootWebSecurityConfiguration.WebSecurityEnablerConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)
+      - @ConditionalOnMissingBean (names: springSecurityFilterChain; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   UserDetailsServiceAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
+      - @ConditionalOnBean (types: org.springframework.security.config.annotation.ObjectPostProcessor; SearchStrategy: all) found bean 'objectPostProcessor'; @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.authentication.AuthenticationManagerResolver,org.springframework.security.oauth2.jwt.JwtDecoder,org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector,org.springframework.security.oauth2.client.registration.ClientRegistrationRepository,org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+    None
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2023-06-27 13:57:25.921  INFO 22740 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 46 class path changes (46 additions, 0 deletions, 0 modifications)
+2023-06-27 13:57:25.945  INFO 22740 --- [Thread-7] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-06-27 13:57:25.955  INFO 22740 --- [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-27 13:57:25.957  INFO 22740 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2023-06-27 13:57:25.966  INFO 22740 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2023-06-27 13:57:26.130  INFO 22740 --- [restartedMain] net.tech.todo.TodoApplication            : Starting TodoApplication using Java 17.0.5 on eren with PID 22740 (C:\Users\isaer\Desktop\Cloneprojct\TodoBackend\target\classes started by isaer in C:\Users\isaer\Desktop\Cloneprojct\TodoBackend)
+2023-06-27 13:57:26.130  INFO 22740 --- [restartedMain] net.tech.todo.TodoApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-06-27 13:57:27.042  INFO 22740 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-27 13:57:27.112  INFO 22740 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 68 ms. Found 4 JPA repository interfaces.
+2023-06-27 13:57:27.351  INFO 22740 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3333 (http)
+2023-06-27 13:57:27.353  INFO 22740 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-27 13:57:27.353  INFO 22740 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-06-27 13:57:27.387  INFO 22740 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-27 13:57:27.388  INFO 22740 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1254 ms
+2023-06-27 13:57:27.416  INFO 22740 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2023-06-27 13:57:27.420  INFO 22740 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2023-06-27 13:57:27.421  INFO 22740 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/todo_db?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false'
+2023-06-27 13:57:27.763  INFO 22740 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-27 13:57:27.977 DEBUG 22740 --- [restartedMain] o.springframework.web.filter.CorsFilter  : Filter 'corsFilter' configured for use
+2023-06-27 13:57:28.170  WARN 22740 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-27 13:57:28.215 DEBUG 22740 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 20 mappings in 'requestMappingHandlerMapping'
+2023-06-27 13:57:28.323  INFO 22740 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@21a5cb43, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1586d067, org.springframework.security.web.context.SecurityContextPersistenceFilter@7a1f7c80, org.springframework.security.web.header.HeaderWriterFilter@5a0d1322, org.springframework.web.filter.CorsFilter@3cbd6d9e, org.springframework.security.web.authentication.logout.LogoutFilter@360242ff, net.tech.todo.config.JwtFilter@52f68ed6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@21fd2f39, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@135bbc27, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@26d95f1d, org.springframework.security.web.session.SessionManagementFilter@29d1bada, org.springframework.security.web.access.ExceptionTranslationFilter@73550d8f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@27e89d07]
+2023-06-27 13:57:28.431  INFO 22740 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-06-27 13:57:28.438 DEBUG 22740 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2023-06-27 13:57:28.466 DEBUG 22740 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+2023-06-27 13:57:28.482 DEBUG 22740 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui/**] in 'resourceHandlerMapping'
+2023-06-27 13:57:28.494 DEBUG 22740 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2023-06-27 13:57:28.606  INFO 22740 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3333 (http) with context path ''
+2023-06-27 13:57:28.754  INFO 22740 --- [restartedMain] net.tech.todo.TodoApplication            : Started TodoApplication in 2.716 seconds (JVM running for 21.968)
+2023-06-27 13:57:28.758  INFO 22740 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+    None
+
+
+Negative matches:
+-----------------
+
+   SpringBootWebSecurityConfiguration.SecurityFilterChainConfiguration:
+      Did not match:
+         - AllNestedConditions 1 matched 1 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter,org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) found beans of type 'org.springframework.security.web.SecurityFilterChain' securityFilterChain; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+
+   SpringBootWebSecurityConfiguration.WebSecurityEnablerConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (names: springSecurityFilterChain; SearchStrategy: all) found beans named springSecurityFilterChain (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)
+
+   UserDetailsServiceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.authentication.AuthenticationManagerResolver,org.springframework.security.oauth2.jwt.JwtDecoder,org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector,org.springframework.security.oauth2.client.registration.ClientRegistrationRepository,org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository; SearchStrategy: all) found beans of type 'org.springframework.security.authentication.AuthenticationManager' authenticationManager and found beans of type 'org.springframework.security.core.userdetails.UserDetailsService' userDetailService and found beans of type 'org.springframework.security.authentication.AuthenticationProvider' authenticationProvider (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2023-06-27 13:57:53.744  INFO 22740 --- [http-nio-3333-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-27 13:57:53.744  INFO 22740 --- [http-nio-3333-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-27 13:57:53.744 DEBUG 22740 --- [http-nio-3333-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2023-06-27 13:57:53.744 DEBUG 22740 --- [http-nio-3333-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2023-06-27 13:57:53.744 DEBUG 22740 --- [http-nio-3333-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2023-06-27 13:57:53.745 DEBUG 22740 --- [http-nio-3333-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@1dcbb896
+2023-06-27 13:57:53.746 DEBUG 22740 --- [http-nio-3333-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@2a4296d2
+2023-06-27 13:57:53.746 DEBUG 22740 --- [http-nio-3333-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2023-06-27 13:57:53.746  INFO 22740 --- [http-nio-3333-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-06-27 13:57:53.772 DEBUG 22740 --- [http-nio-3333-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/auth/register", parameters={}
+2023-06-27 13:57:53.774 DEBUG 22740 --- [http-nio-3333-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to net.tech.todo.controller.auth.UserRestController#register(User)
+2023-06-27 13:57:53.843 DEBUG 22740 --- [http-nio-3333-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [net.tech.todo.data.entity.User@5cb4e2f4]
+2023-06-27 13:57:54.170 DEBUG 22740 --- [http-nio-3333-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-06-27 13:57:54.171 DEBUG 22740 --- [http-nio-3333-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{status=false, message=Bu mail daha kayıt edilmiş, result=net.tech.todo.data.entity.User@5cb4e2f4}]
+2023-06-27 13:57:54.195 DEBUG 22740 --- [http-nio-3333-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 406 NOT_ACCEPTABLE
+2023-06-27 13:58:40.690  INFO 22740 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-27 13:58:40.692  INFO 22740 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2023-06-27 13:58:40.708  INFO 22740 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2023-06-27 13:58:45.477  INFO 13276 --- [restartedMain] net.tech.todo.TodoApplication            : Starting TodoApplication using Java 17.0.5 on eren with PID 13276 (C:\Users\isaer\Desktop\Cloneprojct\TodoBackend\target\classes started by isaer in C:\Users\isaer\Desktop\Cloneprojct\TodoBackend)
+2023-06-27 13:58:45.479  INFO 13276 --- [restartedMain] net.tech.todo.TodoApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-06-27 13:58:45.539  INFO 13276 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-27 13:58:45.539  INFO 13276 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-27 13:58:46.617  INFO 13276 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-27 13:58:46.697  INFO 13276 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 71 ms. Found 4 JPA repository interfaces.
+2023-06-27 13:58:47.471  INFO 13276 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3333 (http)
+2023-06-27 13:58:47.481  INFO 13276 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-27 13:58:47.481  INFO 13276 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-06-27 13:58:47.566  INFO 13276 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-27 13:58:47.566  INFO 13276 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2026 ms
+2023-06-27 13:58:47.599  INFO 13276 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-06-27 13:58:47.880  INFO 13276 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-06-27 13:58:47.887  INFO 13276 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/todo_db?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false'
+2023-06-27 13:58:49.485  INFO 13276 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-27 13:58:49.886 DEBUG 13276 --- [restartedMain] o.springframework.web.filter.CorsFilter  : Filter 'corsFilter' configured for use
+2023-06-27 13:58:50.774  WARN 13276 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-27 13:58:50.850 DEBUG 13276 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 20 mappings in 'requestMappingHandlerMapping'
+2023-06-27 13:58:51.178  INFO 13276 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@58d8bb15, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1bf1e38c, org.springframework.security.web.context.SecurityContextPersistenceFilter@68fcb66, org.springframework.security.web.header.HeaderWriterFilter@16891976, org.springframework.web.filter.CorsFilter@43d7af2e, org.springframework.security.web.authentication.logout.LogoutFilter@6eb514d7, net.tech.todo.config.JwtFilter@2b38a0fe, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1db85367, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3bd061f7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@66af73af, org.springframework.security.web.session.SessionManagementFilter@61553903, org.springframework.security.web.access.ExceptionTranslationFilter@51925a9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4ed1e448]
+2023-06-27 13:58:51.352  INFO 13276 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-06-27 13:58:51.360 DEBUG 13276 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2023-06-27 13:58:51.420 DEBUG 13276 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+2023-06-27 13:58:51.444 DEBUG 13276 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui/**] in 'resourceHandlerMapping'
+2023-06-27 13:58:51.454 DEBUG 13276 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2023-06-27 13:58:51.648  INFO 13276 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3333 (http) with context path ''
+2023-06-27 13:58:51.952  INFO 13276 --- [restartedMain] net.tech.todo.TodoApplication            : Started TodoApplication in 7.075 seconds (JVM running for 8.643)
+2023-06-27 13:58:57.375  INFO 13276 --- [http-nio-3333-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-27 13:58:57.375  INFO 13276 --- [http-nio-3333-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-27 13:58:57.375 DEBUG 13276 --- [http-nio-3333-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2023-06-27 13:58:57.376 DEBUG 13276 --- [http-nio-3333-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2023-06-27 13:58:57.376 DEBUG 13276 --- [http-nio-3333-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2023-06-27 13:58:57.378 DEBUG 13276 --- [http-nio-3333-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@7400625
+2023-06-27 13:58:57.379 DEBUG 13276 --- [http-nio-3333-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@74f0d24e
+2023-06-27 13:58:57.379 DEBUG 13276 --- [http-nio-3333-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2023-06-27 13:58:57.379  INFO 13276 --- [http-nio-3333-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2023-06-27 13:58:57.418 DEBUG 13276 --- [http-nio-3333-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/auth/register", parameters={}
+2023-06-27 13:58:57.423 DEBUG 13276 --- [http-nio-3333-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to net.tech.todo.controller.auth.UserRestController#register(User)
+2023-06-27 13:58:57.529 DEBUG 13276 --- [http-nio-3333-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [net.tech.todo.data.entity.User@4b977ea3]
+2023-06-27 13:58:57.798 DEBUG 13276 --- [http-nio-3333-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-06-27 13:58:57.800 DEBUG 13276 --- [http-nio-3333-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{status=false, message=Bu mail daha kayıt edilmiş, result=net.tech.todo.data.entity.User@4b977ea3}]
+2023-06-27 13:58:57.834 DEBUG 13276 --- [http-nio-3333-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 406 NOT_ACCEPTABLE
+2023-06-27 14:03:19.001  INFO 13276 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-27 14:03:19.005  INFO 13276 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-06-27 14:03:19.030  INFO 13276 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

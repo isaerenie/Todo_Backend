@@ -1,0 +1,95 @@
+/*
+Project Name: Todo App
+-Name: Todo
+-Author: İsa Eren
+-Version: v.1
+-Description: This is a Todo project.
+*/
+
+/* ##################################################### */
+/* ### COMMON PROPERTY ###*/
+body {
+  font-family: "Work Sans", sans-serif;
+  position: relative;
+}
+button {
+  color: white !important;
+}
+
+/* ##################################################### */
+/* ### Layout ###*/
+#layout {
+  height: 70rem;
+  margin-top: 0 !important;
+}
+
+/* ##################################################### */
+/* ### Add Todo ###*/
+.addtodo {
+  margin-top: 0;
+}
+
+/* ##################################################### */
+/* ### Todo Delete ###*/
+.dlt {
+  margin-bottom: 3rem;
+}
+
+/* ##################################################### */
+/* ### Confirm Delete ###*/
+.react-confirm-alert-overlay{
+  background-color: rgba(0,0,0,.5)!important;
+}
+.react-confirm-alert-body{
+  width: 30rem!important;
+  height: 10rem!important;
+  border-radius: 1rem!important;
+  background-color: #fff!important;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,.5)!important;
+  text-align: center!important;
+}
+.react-confirm-alert-body > h1{
+  margin-top: 2rem!important;
+  font-size: 2rem!important;
+  font-weight: 700!important;
+}
+.react-confirm-alert-button-group{
+  display: flex;
+  justify-content: center!important;
+}
+.react-confirm-alert-button-group > button{
+  margin: 0 1rem!important;
+}
+
+/* ##################################################### */
+/* ### LINE CLAMP ###*/
+.line-clamp2 {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+
+/* ##################################################### */
+/* ### MEDIA QUERY###*/
+/* 1<=X<=767 */
+@media screen and (min-width: 1px) {
+  #layout {
+    height: 100%;
+    width: 80%;
+  }
+}
+.col-md-9 {
+  width: 60%;
+}
+
+.col-md-3 {
+  width: 40%;
+}
+p{
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
