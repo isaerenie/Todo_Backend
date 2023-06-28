@@ -103,7 +103,7 @@ function Done() {
                   {editSubject}
                 </p>
               ) : (
-                <p className="text-start ps-2 text-decoration-line-through">
+                <p className="text-start ps-2 text-decoration-line-through text-muted">
                   {todo.subject}
                 </p>
               )}

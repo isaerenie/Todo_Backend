@@ -1,8 +1,11 @@
 import { useForm } from "react-hook-form";
 import { RegisterDto } from "../../models/dto/RegisterDto.ts";
 import UserApiService from "../../services/UserApiService.ts";
+import {toast} from "react-toastify";
+import {useNavigate} from "react-router-dom";
 
 function Register() {
+    const navigate = useNavigate();
     const userApiService = new UserApiService();
     const {
         register,
@@ -15,7 +18,12 @@ function Register() {
 
     const onSubmit = handleSubmit((data) => {
         userApiService.register(data).then((r) => {
-            console.log(r);
+          if (r.status === 200) {
+                    toast("Registration successful")
+              navigate("/")
+                } else {
+                    toast("Registration failed")
+                }
         });
     });
 

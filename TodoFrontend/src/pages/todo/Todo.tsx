@@ -65,6 +65,7 @@ function Todo() {
   const handleEditClick = (id: number, subject: string) => {
     setEditId(id);
     setEditSubject(subject);
+
   };
 
   const handleSaveClick = (id: number) => {

@@ -38,6 +38,7 @@ function All() {
     todoApiService.update(id, todo).then((res) => {
       if (res.status === 200) {
         toast.success("Todo updated successfully");
+        allTodoList(); //
       } else {
         toast.error("Todo update failed");
       }
@@ -112,7 +113,7 @@ function All() {
               ) : (
                 <p
                   className={`text-start ps-2 ${
-                    todo.done ? "text-decoration-line-through" : ""
+                    todo.done ? "text-decoration-line-through text-muted" : ""
                   }`}
                 >
                   {todo.subject}
