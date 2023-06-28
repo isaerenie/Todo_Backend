@@ -10,7 +10,6 @@ import { TodoContext } from "../../pages/todo/All";
 function AddTodo() {
     const todoApiService = new TodoApiService();
     const { updateAllTodos } = useContext(TodoContext);
-
     const nav = useNavigate();
     const {
         register,
@@ -53,6 +52,7 @@ function AddTodo() {
 
     return (
         <>
+            {/* Add Todo */}
             <div className="row addtodo mt-5">
                 <h3 className="pb-0">TodoInput</h3>
                 <div className="border border-info p-4 mb-4 rounded-1">

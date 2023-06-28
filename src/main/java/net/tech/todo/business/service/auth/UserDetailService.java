@@ -27,6 +27,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import java.util.*;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @Service
+@Transactional
 public class UserDetailService implements UserDetailsService {
 
     final UserRepository userRepository;
