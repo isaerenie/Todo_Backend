@@ -17,9 +17,6 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="todo")
-
-
-
 public class Todo extends BaseEntity implements java.io.Serializable {
     public static final Long serialVersionUID = 1L;
     @Column(name = "subject",columnDefinition = "varchar(255) default 'Konu girmediniz'")

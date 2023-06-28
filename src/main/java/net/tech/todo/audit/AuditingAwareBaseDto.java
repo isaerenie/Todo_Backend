@@ -11,7 +11,6 @@ import java.util.Date;
 
 @Getter
 @Setter
-
 abstract public class AuditingAwareBaseDto implements Serializable {
 
     public static final Long serialVersionUID = 1L;
@@ -19,7 +18,6 @@ abstract public class AuditingAwareBaseDto implements Serializable {
     private Long id;
     @Builder.Default
     private Date systemDate=new Date(System.currentTimeMillis());
-
 
     @JsonIgnore
     protected String createdUser;

@@ -1,5 +1,6 @@
 package net.tech.todo.business.service.todo.impl;
 
+// importler
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import net.tech.todo.bean.ModelMapperBean;
@@ -12,33 +13,35 @@ import net.tech.todo.exception.TodoListNotDeleted;
 import net.tech.todo.exception.TodoNotFound;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import net.tech.todo.util.ResponseMap;
-import net.tech.todo.util.ResponseStatus;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
-@RequiredArgsConstructor // Injection
-@Log4j2
+@RequiredArgsConstructor // Injection için kullanılır.
+@Log4j2 // Loglama için kullanılır.
+@Service // Service katmanı olduğunu belirtir.
 
-@Service
+// ITodoGenericsService interface'ini implemente eden TodoServiceImpl classı.
 public class TodoServiceImpl implements ITodoGenericsService<TodoDto, Todo> {
     private final ITodoRepository iTodoRepository;
     private final ModelMapperBean modelMapperBean;
 
-
     @Transactional
     @Override
+    // TodoDto nesnesini Todo nesnesine dönüştürür.
     public TodoDto EntityToDto(Todo todo) {
         return modelMapperBean.modelMapperMethod().map(todo, TodoDto.class);
     }
 
     @Override
+    // Todo nesnesini TodoDto nesnesine dönüştürür.
     public Todo DtoToEntity(TodoDto todoDto) {
         return modelMapperBean.modelMapperMethod().map(todoDto, Todo.class);
     }
 
+    // CREATE
     @Override
+    // Todo yerine TodoDto kullanılmasının sebebi bilgi güvenliğini sağlamaktır. Çünkü TodoDto nesnesi veritabanı ile iletişim kurar.
+    // ve veritabanı ile iletişim kurarken Todo nesnesi kullanılmaz. Bu sayede veritabanı ile iletişim kurarken Todo nesnesinin bilgileri korunmuş olur.
     public TodoDto todoServiceCreate(TodoDto todoDto) {
         if (todoDto != null) {
             Todo todoModel = DtoToEntity(todoDto);
@@ -52,11 +55,13 @@ public class TodoServiceImpl implements ITodoGenericsService<TodoDto, Todo> {
 
     }
 
+    // LIST
     @Override
     public List<TodoDto> todoServiceList() {
         return iTodoRepository.findAll().stream().map(this::EntityToDto).collect(Collectors.toList());
     }
 
+    // FINDBYID
     @Override
     public TodoDto todoServiceFindById(Long id) {
         Todo todo = null;
@@ -68,6 +73,7 @@ public class TodoServiceImpl implements ITodoGenericsService<TodoDto, Todo> {
         return EntityToDto(todo);
     }
 
+    // DELETEBYID
     @Override
     public TodoDto todoServiceDeleteById(Long id) {
         TodoDto todoDtoDelete = todoServiceFindById(id);
@@ -76,6 +82,7 @@ public class TodoServiceImpl implements ITodoGenericsService<TodoDto, Todo> {
         return todoDtoDelete;
     }
 
+    // UPDATEBYID
     @Override
     public TodoDto todoServiceUpdateById(Long id, TodoDto todoDto) {
         Todo todo = DtoToEntity(todoServiceFindById(id));
@@ -92,6 +99,7 @@ public class TodoServiceImpl implements ITodoGenericsService<TodoDto, Todo> {
         return EntityToDto(todo);
     }
 
+    // UPDATEBYIDCHECK
     @Override
     public TodoDto todoServiceUpdateByIdCheck(Long id, Boolean done) {
         Todo todo = DtoToEntity(todoServiceFindById(id));
@@ -106,6 +114,7 @@ public class TodoServiceImpl implements ITodoGenericsService<TodoDto, Todo> {
         return EntityToDto(todo);
     }
 
+    // LISTDONE
     @Override
     public List<TodoDto> todoServiceDone() {
         return iTodoRepository.findAll()
@@ -113,6 +122,7 @@ public class TodoServiceImpl implements ITodoGenericsService<TodoDto, Todo> {
                 .map(this::EntityToDto).toList();
     }
 
+    // LISTTODO
     @Override
     public List<TodoDto> todoServiceTodo() {
 
@@ -121,9 +131,14 @@ public class TodoServiceImpl implements ITodoGenericsService<TodoDto, Todo> {
                 .map(this::EntityToDto).toList();
     }
 
+    // DELETEALLDONE
     @Override
 
     public Boolean todoServiceDeleteAllDone() {
+        /*
+          Yapılacaklar listesi boş ise hata fırlatır.Değilse Bulunan liste streame dönüştürülür filtreleme işlemi yapılır.
+           Filtreleme işlemi sonucunda yapılacaklar listesindeki tüm elemanlar done durumunda ise yapılacaklar listesi boş olur ve hata fırlatılır. Eğer yapılacaklar listesi boş değil ise yapılacaklar listesindeki
+          tüm elemanlar silinir.*/
         if (iTodoRepository.findAll()
                 .stream().filter(Todo::isDone)
                 .toList().isEmpty()) {
@@ -139,7 +154,7 @@ public class TodoServiceImpl implements ITodoGenericsService<TodoDto, Todo> {
     }
 
 
-
+    // DELETEALL
     @Override
     public Boolean todoServiceDeleteAll() {
         iTodoRepository.deleteAll();

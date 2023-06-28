@@ -16,6 +16,7 @@ public class ResponseMap<T> {
     private ResponseStatus status;
     private String code;
     private Map<String,?> details;
+
     public ResponseStatus getStatus() {
         return (status == null) ? ResponseStatus.SUCCESS : status;
     }

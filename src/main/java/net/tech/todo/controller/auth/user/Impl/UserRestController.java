@@ -1,4 +1,4 @@
-package net.tech.todo.controller.auth;
+package net.tech.todo.controller.auth.user.Impl;
 
 import net.tech.todo.business.service.auth.UserDetailService;
 import net.tech.todo.data.entity.User;

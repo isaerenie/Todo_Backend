@@ -26,8 +26,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.*;
 
-// @CrossOrigin(origins = "*", allowedHeaders = "*") ile cross origin hatası çözüldü. Bu satırı eklemek yerine CORS konfigürasyonu da yapılabilir.
-// bu hatanın nednei: https://stackoverflow.com/questions/31724994/spring-boot-rest-service-returns-403-forbidden
+// @CrossOrigin(origins = "*", allowedHeaders = "*") ile cross origin hatası çözüldü.
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 
 // @Service anotasyonu ile bu sınıfın bir servis sınıfı olduğunu belirtiyoruz. Böylece Spring IoC Container bu sınıfı yönetebilecek.
@@ -52,16 +51,16 @@ public class UserDetailService implements UserDetailsService {
     final UserRepository userRepository;
     final JwtUtil jwtUtil;
     final AuthenticationManager authenticationManager;
-    final UserRolRepository userRolRepository;
+
 
     // UserDetailService sınıfının constructor'ı oluşturuldu.
     // Spring IoC Container UserRepository, JwtUtil, AuthenticationManager ve
     // UserRolRepository sınıflarından nesneler oluştururken bu constructor'ı kullanacak.
-    public UserDetailService(UserRepository userRepository, JwtUtil jwtUtil, @Lazy AuthenticationManager authenticationManager, UserRolRepository userRolRepository) {
+    public UserDetailService(UserRepository userRepository, JwtUtil jwtUtil, @Lazy AuthenticationManager authenticationManager) {
         this.userRepository = userRepository;
         this.jwtUtil = jwtUtil;
         this.authenticationManager = authenticationManager;
-        this.userRolRepository = userRolRepository;
+
     }
 
     // loadUserByUsername metotu kullanıcı adı ve şifre ile kullanıcı bilgilerini veritabanından çekmek için kullanılır.
@@ -111,7 +110,7 @@ public class UserDetailService implements UserDetailsService {
             jwtUser.setPassword(encoder().encode(jwtUser.getPassword()));
             User user = userRepository.save(jwtUser);
             String jwtToken = jwtUtil.generateToken(loadUserByUsername(jwtUser.getEmail()));
-           hm.put(ERest.jwt, jwtToken);
+            hm.put(ERest.jwt, jwtToken);
             hm.put(ERest.status, true);
             hm.put(ERest.result, user);
 
@@ -134,7 +133,7 @@ public class UserDetailService implements UserDetailsService {
         try {
             authenticationManager
                     .authenticate(new UsernamePasswordAuthenticationToken(jwtLogin.getUsername(), jwtLogin.getPassword()
-            ));
+                    ));
             UserDetails userDetails = loadUserByUsername(jwtLogin.getUsername());
             String jwt = jwtUtil.generateToken(userDetails);
             hm.put(ERest.status, true);

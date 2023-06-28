@@ -21,7 +21,7 @@ import java.util.Date;
 // @JsonIgnoreProperties annotationı ile oluşturulma ve güncellenme tarihlerinin get edilmesi engellendi.
 @JsonIgnoreProperties(value = {"created_date,updated_date"},allowGetters = true)
 
-// AuditingAwareBaseEntity classı  entitylerde oluşturulma ve güncellenme tarihlerini tutmak için oluşturuldu.
+// AuditingAwareBaseEntity classı ile entitylerde oluşturulma ve güncellenme tarihlerini tutmak için oluşturuldu.
 abstract public class AuditingAwareBaseEntity {
 
     @CreatedBy

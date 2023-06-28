@@ -14,8 +14,17 @@ function TodoDelete() {
   const deleteAllDone = () => {
     todoApiService.deleteAllDone().then((res) => {
      if ( res.status === 200) {
-      toast.success('All done tasks deleted')
-      nav("/todo");
+         toast('All done task deleted', {
+             position: "bottom-left",
+             autoClose: 5000,
+             hideProgressBar: false,
+             closeOnClick: true,
+             pauseOnHover: true,
+             draggable: true,
+             progress: undefined,
+             theme: "light",
+         });
+      nav("/all");
      }else{
       toast.error('Something went wrong')
      }
@@ -25,14 +34,23 @@ function TodoDelete() {
   const deleteAll = () => {
     todoApiService.deleteAll().then((res) => {
       if ( res.status === 200) {
-        toast.success('All  tasks deleted')
+          toast('All task deleted', {
+              position: "bottom-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+          });
         nav("/all");
        }else{
         toast.error('Something went wrong')
        }
     });
   };
-  
+
 
   return (
     <>

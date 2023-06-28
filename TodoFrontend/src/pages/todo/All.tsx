@@ -93,6 +93,7 @@ function All() {
 
   useEffect(() => {
     allTodoList();
+    updateAllTodos();
   }, [updateAllTodos]);
 
   return (
