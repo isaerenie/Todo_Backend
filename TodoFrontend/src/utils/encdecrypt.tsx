@@ -1,4 +1,6 @@
 import * as CryptoJS from "crypto-js"
+
+
 export const encrypt = (plainText: string) => {
     const cipherText = CryptoJS.AES.encrypt(plainText, 'key').toString();
     return cipherText

@@ -2,11 +2,11 @@ import axios from "axios";
 import React, { useContext } from "react";
 import {control} from "../utils/control.tsx";
 
-const baseUrl = "http://localhost:3333/todo/";
-
+const baseUrl = "http://localhost:3333/todo/api/v1/";
+const baseUrl1 = "http://localhost:3333/auth/";
 const timeout = 15000;
 export const userConfig = axios.create({
-  baseURL: baseUrl,
+  baseURL: baseUrl1,
   timeout: timeout
 })
 
@@ -17,10 +17,7 @@ export const siteConfig = axios.create({
 })
 
 
-export const axiosConfig = axios.create({
-  baseURL: baseUrl,
-});
 
-const AxiosContext = React.createContext(axiosConfig);
+const AxiosContext = React.createContext(siteConfig);
 
 export const useAxios = () => useContext(AxiosContext);

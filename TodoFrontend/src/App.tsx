@@ -5,8 +5,9 @@ import Done from "./pages/todo/Done";
 import Todo from "./pages/todo/Todo";
 import Layout from "./components/Layout";
 import ErrorPage from "./components/ErrorPage";
-import Login from "./components/Login";
+import Login from "./components/user/Login.tsx";
 import {AuthGuard} from "./guards/AuthGuards.tsx";
+import Register from "./components/user/Register.tsx";
 
 function App() {
   const updateAllTodos = () => {
@@ -17,6 +18,10 @@ function App() {
     {
       path: "/",
       element: <Login />,
+    },
+    {
+      path: "/register",
+      element: <Register/>,
     },
     {
       path: "/unauthorized",

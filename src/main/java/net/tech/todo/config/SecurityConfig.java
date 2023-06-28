@@ -57,10 +57,8 @@ public class SecurityConfig {
                 .and()
                 .authorizeRequests()
                 .antMatchers(AUTH_WHITELIST).permitAll()
-                .antMatchers("/todo/api/v1/*").hasAnyRole("Todo", "todo")
-                .antMatchers("/category/list").permitAll()
-                .antMatchers("/category/**").hasAnyRole("admin", "customer")
-
+                .antMatchers("/todo/api/v1/*").hasAnyRole("Admin", "todo")
+                .antMatchers("/todo/api/v1/*").hasAnyRole("User", "user")
                 .and()
                 .authenticationProvider(authenticationProvider())
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
@@ -70,6 +68,7 @@ public class SecurityConfig {
     private static final String[] AUTH_WHITELIST = {
             "/auth",
             "/list",
+            "/login",
             "/register",
             "/v2/api-docs",
             "/swagger-resources",

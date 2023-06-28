@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:5173")
 @RequestMapping("/auth")
 public class UserRestController {
 
@@ -23,10 +24,5 @@ public class UserRestController {
     @PostMapping("/login")
     public ResponseEntity auth(@RequestBody JWTLogin jwtLogin) {
         return service.auth(jwtLogin);
-    }
-    @GetMapping("/list")
-    public ResponseEntity list() {
-        System.out.println("hello");
-        return service.list();
     }
 }
