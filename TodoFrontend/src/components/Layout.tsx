@@ -15,11 +15,12 @@ function Layout() {
   return (
     <>
       <div id="layout" className="container mt-5 mb-0 text-center">
-    <div className="row mt-5">
-        <div className="col-12">
-            <button className="btn btn-danger" onClick={fncLogout}>Logout</button>
-        </div>
-    </div>
+          <div className="row mt-5 ">
+              <div id="logoutBtn" className="col-12">
+                  <span className="btn btn-danger" onClick={fncLogout}><i
+                      className="fa-solid fa-right-from-bracket"></i></span>
+              </div>
+          </div>
         {/* Add Todo */}
          <AddTodo />
 

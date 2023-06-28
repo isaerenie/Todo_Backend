@@ -15,6 +15,9 @@ body {
 button {
   color: white !important;
 }
+#logoutBtn{
+  text-align: end;
+}
 
 /* ##################################################### */
 /* ### Layout ###*/
