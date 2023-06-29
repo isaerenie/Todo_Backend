@@ -3,10 +3,10 @@ package net.tech.todo.util;
 public class PersistLink {
 
     // gitHub URL
-
+    // https://github.com/isaerenie/Todo_Backend
 
     // front URL
-   // http://localhost:3000/
+    // http://localhost:5173/
 
     // backend URL
     // http://localhost:3333/

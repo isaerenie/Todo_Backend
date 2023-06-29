@@ -1,16 +1,17 @@
 import { IJwt } from "../models/IJwt"
 import { decrypt } from "./encdecrypt"
 
+// Jwt kontrolü için kontrol fonksiyonu yazıldı.
 export const control = () : IJwt | null => {
-    // remember control
-
     const stRemember = localStorage.getItem('user')
 
     console.log(stRemember)
     if ( stRemember ) {
         sessionStorage.setItem('user', stRemember)
     }
+
     const stEncData = sessionStorage.getItem('user')
+
     if ( stEncData ) {
         try {
             const stDdata = decrypt(stEncData)

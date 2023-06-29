@@ -1,6 +1,7 @@
 package net.tech.todo.business.service.todo.impl;
 
 // importler
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import net.tech.todo.bean.ModelMapperBean;
@@ -13,6 +14,7 @@ import net.tech.todo.exception.TodoListNotDeleted;
 import net.tech.todo.exception.TodoNotFound;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
 import java.util.stream.Collectors;
 

@@ -1,5 +1,5 @@
 import {siteConfig} from "../configs/axiosConfig";
-import {TodoDto} from "../models/TodoDto";
+import {TodoDto} from "../models/dto/TodoDto.ts";
 import {TodoDetails, TodoResponse} from "../models/TodoResponse";
 
 
@@ -45,7 +45,7 @@ class TodoApiService {
     }
 
     //ALL DONE
-    // localhost:3333/api/v1/Done
+    // localhost:3333/api/v1/done
     allDoneList() {
         return siteConfig.get(`done`);
     }

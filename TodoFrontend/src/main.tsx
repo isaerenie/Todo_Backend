@@ -9,6 +9,7 @@ import 'react-confirm-alert/src/react-confirm-alert.css';
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <BrowserRouter>
             <App/>
+{/* ToastContainer ile tüm uyarılar için bir container oluşturulur. */}
         <ToastContainer/>
     </BrowserRouter>
 );

@@ -11,10 +11,12 @@ import Register from "./components/user/Register.tsx";
 import Unauthorized from "./components/Unauthorized.tsx";
 
 function App() {
+
+    // updateAllTodos oluşturulduktan sonra TodoContext.Provider içerisine eklenir.
     const updateAllTodos = () => {
-        console.log("updateAllTodos");
     };
 
+    // useRoutes kullnılarak rotalar oluşturuldu.
     const routes = useRoutes([
         {
             path: "/",
@@ -33,7 +35,9 @@ function App() {
             path: "/",
             element: (
                 <>
+                    {/*AuthGuard Layout içierisindeki tüm rotaları kapsar ve kullanıcı girişi yapılmadan erişim sağlanamaz.*/}
                     <AuthGuard>
+                        {/*TodoContext.Provider içerisindeki updateAllTodos fonksiyonu ile tüm todoların güncellenmesi  sağlanır.*/}
                         <TodoContext.Provider value={{updateAllTodos}}>
                             <Layout/>
                         </TodoContext.Provider>

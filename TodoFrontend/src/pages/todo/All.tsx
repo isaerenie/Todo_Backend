@@ -9,12 +9,19 @@ export const TodoContext = createContext({
 });
 
 function All() {
+  // Tüm todoları listelemek için kullanılan state
   const [allTodos, setAllTodos] = useState<TodoDetails[]>([]);
+
+  // Edit işlemleri için kullanılan state
   const [editId, setEditId] = useState<number | null>(null);
   const [editSubject, setEditSubject] = useState<string>("");
   const [editDone, setEditDone] = useState(false);
+
+  // TodoApiService sınıfından nesne üretildi
   const todoApiService = new TodoApiService();
 
+  // useContext kullanılarak TodoContext içerisindeki updateAllTodos fonksiyonu alındı.
+  // Bu fonksiyon sayesinde tüm todoların listesi güncellenecek.
   const { updateAllTodos } = useContext(TodoContext);
 
   const allTodoList = () => {

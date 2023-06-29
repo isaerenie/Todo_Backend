@@ -2,7 +2,6 @@ import { NavLink } from "react-router-dom";
 
 function TodoList() {
 
-
   return (
     <>
       <h3>TodoList</h3>

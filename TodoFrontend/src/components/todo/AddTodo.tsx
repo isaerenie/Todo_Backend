@@ -1,15 +1,19 @@
+// react hooks
 import {useForm} from "react-hook-form";
-import {TodoDto} from "../../models/TodoDto";
-import TodoApiService from "../../services/TodoApiService";
 import {useNavigate} from "react-router-dom";
-import {toast} from "react-toastify";
-import { useContext } from "react";
-import { TodoContext } from "../../pages/todo/All";
+import {useContext} from "react";
 
+// imports
+import {TodoDto} from "../../models/dto/TodoDto.ts";
+import TodoApiService from "../../services/TodoApiService";
+import {TodoContext} from "../../pages/todo/All";
+
+//toast
+import {toast} from "react-toastify";
 
 function AddTodo() {
     const todoApiService = new TodoApiService();
-    const { updateAllTodos } = useContext(TodoContext);
+    const {updateAllTodos} = useContext(TodoContext);
     const nav = useNavigate();
     const {
         register,
@@ -18,18 +22,13 @@ function AddTodo() {
         reset,
     } = useForm<TodoDto>();
 
+    // add todo function
     const onSubmit = handleSubmit((data) => {
         todoApiService.create(data).then((res) => {
                 if (res.status === 200) {
                     toast.success('New Todo added', {
                         position: "top-center",
                         autoClose: 3000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: "light",
                     });
                     updateAllTodos()
                     nav("/all");
@@ -38,12 +37,6 @@ function AddTodo() {
                     toast.error('Something went wrong', {
                         position: "top-center",
                         autoClose: 5000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: "light",
                     });
                 }
             }
@@ -53,7 +46,7 @@ function AddTodo() {
     return (
         <>
             {/* Add Todo */}
-            <div className="row addtodo mt-5">
+            <div className="row addtodo">
                 <h3 className="pb-0">TodoInput</h3>
                 <div className="border border-info p-4 mb-4 rounded-1">
                     <form onSubmit={onSubmit}>

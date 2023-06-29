@@ -12,17 +12,26 @@ import org.springframework.web.bind.annotation.*;
 public class UserRestController {
 
     final UserDetailService service;
+
     public UserRestController(UserDetailService service) {
         this.service = service;
     }
 
+    // Register
     @PostMapping("/register")
     public ResponseEntity register(@RequestBody User user) {
         return service.register(user);
     }
 
+    // Login
     @PostMapping("/login")
     public ResponseEntity auth(@RequestBody JWTLogin jwtLogin) {
-        return service.auth(jwtLogin);
+        return service.login(jwtLogin);
+    }
+
+    //FindbyEmail
+    @GetMapping("/find/{email}")
+    public ResponseEntity findByEmail(@PathVariable String email) {
+        return service.findByEmail(email);
     }
 }

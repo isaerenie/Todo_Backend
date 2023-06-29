@@ -23,11 +23,12 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @RequiredArgsConstructor
 public class SecurityConfig {
 
-    final JwtFilter jwtFilter;  //JwtAuthenticationFilter
+    final JwtFilter jwtFilter;
     final UserRepository repository;
     final UserDetailService userDetailService;
 
     @Bean
+    //AuthenticationProvider ile kullanıcı doğrulama işlemlerini gerçekleştiriyoruz.
     public AuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
         provider.setUserDetailsService(userDetailService);
@@ -36,6 +37,7 @@ public class SecurityConfig {
 
     }
     @Bean
+    //AuthenticationManager ile kullanıcı doğrulama işlemlerini gerçekleştiriyoruz.
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
         return config.getAuthenticationManager();
     }
@@ -45,6 +47,7 @@ public class SecurityConfig {
     }
 
     @Bean
+    //SecurityFilterChain ile güvenlik işlemlerini gerçekleştiriyoruz.
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .cors()

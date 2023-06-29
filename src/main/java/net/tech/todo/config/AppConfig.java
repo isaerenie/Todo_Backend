@@ -6,7 +6,7 @@ import springfox.documentation.service.*;
 import java.util.Arrays;
 import java.util.List;
 
-@Configuration // @Configuration anotasyonu ile bu sınıfın bir konfigürasyon sınıfı olduğunu belirtiyoruz.
+@Configuration
 public class AppConfig {
     private ApiKey apiKey() {
         return new ApiKey("JWT", "Authorization", "header");

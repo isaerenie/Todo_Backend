@@ -2,7 +2,6 @@
 
 function Unauthorized() {
     return (
-
         <div className="container">
             <div className="row">
                 <div className="col-md-12">

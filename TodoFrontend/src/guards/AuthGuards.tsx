@@ -1,7 +1,6 @@
 import {control} from "../utils/control.tsx";
 import {Navigate, useLocation} from "react-router-dom";
 
-
 export type AuthGuardProps = {
     children:any;
 }

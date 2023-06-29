@@ -1,8 +1,8 @@
-import { useForm } from "react-hook-form";
-import { RegisterDto } from "../../models/dto/RegisterDto.ts";
+import {useForm} from "react-hook-form";
+import {RegisterDto} from "../../models/dto/RegisterDto.ts";
 import UserApiService from "../../services/UserApiService.ts";
-import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import {toast} from "react-toastify";
+import {useNavigate} from "react-router-dom";
 
 function Register() {
     const navigate = useNavigate();
@@ -10,19 +10,21 @@ function Register() {
     const {
         register,
         handleSubmit,
-        formState: { errors },
+        formState: {errors},
         watch
     } = useForm<RegisterDto>();
 
     const password = watch("password");
 
     const onSubmit = handleSubmit((data) => {
-        userApiService.register(data).then((r) => {
-            if (r.status === 200) {
+        userApiService.register(data).then((res) => {
+            if (res.status === 200) {
                 toast("Registration successful");
                 navigate("/");
             } else {
                 toast("Registration failed");
+                console.log(res.data)
+                navigate("/register");
             }
         });
     });
@@ -30,7 +32,7 @@ function Register() {
     return (
         <>
             {/* Register */}
-            <div className="row register mt-5">
+            <div id="register" className="row register mt-5">
                 <div className="col-md-4 offset-md-4 text-center">
                     <div className="border border-info p-4 mb-4 rounded-1 shadow">
                         <h3 className="mb-3">Register</h3>
@@ -45,7 +47,7 @@ function Register() {
                                     placeholder="Firstname"
                                     aria-label="Firstname"
                                     aria-describedby="basic-addon1"
-                                    {...register("firstName", { required: true })}
+                                    {...register("firstName", {required: true})}
                                 />
                             </div>
                             {errors.firstName && (
@@ -61,7 +63,7 @@ function Register() {
                                     placeholder="Lastname"
                                     aria-label="Lastname"
                                     aria-describedby="basic-addon1"
-                                    {...register("lastName", { required: true })}
+                                    {...register("lastName", {required: true})}
                                 />
                             </div>
                             {errors.lastName && (
@@ -77,7 +79,7 @@ function Register() {
                                     placeholder="Email"
                                     aria-label="Email"
                                     aria-describedby="basic-addon1"
-                                    {...register("email", { required: true })}
+                                    {...register("email", {required: true})}
                                 />
                             </div>
                             {errors.email && (
@@ -93,7 +95,7 @@ function Register() {
                                     placeholder="Password"
                                     aria-label="Password"
                                     aria-describedby="basic-addon1"
-                                    {...register("password", { required: true })}
+                                    {...register("password", {required: true})}
                                 />
                             </div>
                             {errors.password && (

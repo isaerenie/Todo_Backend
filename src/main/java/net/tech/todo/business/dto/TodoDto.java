@@ -12,12 +12,13 @@ import net.tech.todo.audit.AuditingAwareBaseDto;
 import javax.persistence.Column;
 import java.io.Serializable;
 
-//@Data annotationı ile getter ve setter metodları oluşturuldu.
+// lombok ile getter setter ve constructorları oluşturuyoruz.
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Log4j2
+// AuditingAwareBaseDto sınıfından kalıtım alıyoruz.
 public class TodoDto extends AuditingAwareBaseDto implements Serializable {
     public static final Long serialVersionUID = 1L;
     @Column(name = "subject",columnDefinition = "varchar(255) default 'Konu girmediniz'")

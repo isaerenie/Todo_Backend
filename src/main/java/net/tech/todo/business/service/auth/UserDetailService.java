@@ -3,7 +3,6 @@ package net.tech.todo.business.service.auth;
 import net.tech.todo.data.entity.Role;
 import net.tech.todo.data.entity.User;
 import net.tech.todo.data.repo.UserRepository;
-import net.tech.todo.data.repo.UserRolRepository;
 import net.tech.todo.props.JWTLogin;
 import net.tech.todo.util.ERest;
 import net.tech.todo.util.JwtUtil;
@@ -23,39 +22,18 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.CrossOrigin;
-
 import java.util.*;
 
-// @CrossOrigin(origins = "*", allowedHeaders = "*") ile cross origin hatası çözüldü.
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-
-// @Service anotasyonu ile bu sınıfın bir servis sınıfı olduğunu belirtiyoruz. Böylece Spring IoC Container bu sınıfı yönetebilecek.
 @Service
-
-// @Transactional anotasyonu ile bu sınıfın bir transaction sınıfı olduğunu belirtiyoruz. Böylece Spring IoC Container bu sınıfı yönetebilecek ve transaction yönetimi yapabilecek.
-// Bu sınıfın metotlarından biri çağrıldığında bir transaction başlatılır. Metot başarılı bir şekilde tamamlanırsa transaction commit edilir. Metot başarısız olursa transaction rollback edilir.
 @Transactional
 
-// UserDetailService sınıfı Spring Security tarafından kullanılan bir sınıftır.
-// Bu sınıfın amacı kullanıcı adı ve şifre ile kullanıcı bilgilerini veritabanından çekmektir.
-// Bu sınıfın metotları Spring Security tarafından otomatik olarak çağrılır.
-// implements UserDetailsService ile bu sınıfın UserDetailsService interface'ini implement ettiğini belirtiyoruz.
-// UserDetailsService interface'ini implement ettiğimiz için loadUserByUsername metotunu override etmek zorundayız.
-// loadUserByUsername metotu kullanıcı adı ve şifre ile kullanıcı bilgilerini veritabanından çekmek için kullanılır.
 public class UserDetailService implements UserDetailsService {
-
-    // UserRepository sınıfından userRepository nesnesi oluşturuldu.
-    // final anahtar kelimesi ile userRepository nesnesinin referansı değiştirilemez hale getirildi.
-    // Yani bu nesnenin referansı bir kez atandıktan sonra bir daha değiştirilemez. Bu nesnenin referansı değiştirilemez ama içeriği değiştirilebilir.
-    // Yani bu nesnenin metotları çağrılabilir ve içeriği değiştirilebilir.
     final UserRepository userRepository;
     final JwtUtil jwtUtil;
     final AuthenticationManager authenticationManager;
 
 
-    // UserDetailService sınıfının constructor'ı oluşturuldu.
-    // Spring IoC Container UserRepository, JwtUtil, AuthenticationManager ve
-    // UserRolRepository sınıflarından nesneler oluştururken bu constructor'ı kullanacak.
     public UserDetailService(UserRepository userRepository, JwtUtil jwtUtil, @Lazy AuthenticationManager authenticationManager) {
         this.userRepository = userRepository;
         this.jwtUtil = jwtUtil;
@@ -63,17 +41,11 @@ public class UserDetailService implements UserDetailsService {
 
     }
 
-    // loadUserByUsername metotu kullanıcı adı ve şifre ile kullanıcı bilgilerini veritabanından çekmek için kullanılır.
-    // Bu metot Spring Security tarafından otomatik olarak çağrılır.
-    // Kullanıcı bilgileri UserDetails nesnesine aktarılır.
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-
-        // userRepository nesnesinin findByEmailEqualsIgnoreCase metotu ile kullanıcı bilgileri veritabanından çekildi.
         Optional<User> optionalJWTUser = userRepository.findByEmailEqualsIgnoreCase(username);
         if (optionalJWTUser.isPresent()) {
             User u = optionalJWTUser.get();
-
             // Kullanıcı bilgileri UserDetails nesnesine aktarıldı.
             UserDetails userDetails = new org.springframework.security.core.userdetails.User(
                     u.getEmail(),
@@ -94,15 +66,13 @@ public class UserDetailService implements UserDetailsService {
     // Bu metot kullanıcı bilgileri veritabanından çekildikten sonra otomatik olarak çağrılır.
     public Collection roles(List<Role> rolex) {
         List<GrantedAuthority> ls = new ArrayList<>();
-
-        // Veri tabanından çekilen roller SimpleGrantedAuthority nesnesine aktarılıyor.
         for (Role role : rolex) {
             ls.add(new SimpleGrantedAuthority(role.getName()));
         }
         return ls;
     }
 
-
+    //Register metodu ile kullanıcı kayıt işlemi yapılır.
     public ResponseEntity register(User jwtUser) {
         Optional<User> optionalJWTUser = userRepository.findByEmailEqualsIgnoreCase(jwtUser.getEmail());
         Map<ERest, Object> hm = new LinkedHashMap();
@@ -128,7 +98,7 @@ public class UserDetailService implements UserDetailsService {
         return new BCryptPasswordEncoder();
     }
 
-    public ResponseEntity auth(JWTLogin jwtLogin) {
+    public ResponseEntity login(JWTLogin jwtLogin) {
         Map<ERest, Object> hm = new LinkedHashMap<>();
         try {
             authenticationManager
@@ -147,18 +117,17 @@ public class UserDetailService implements UserDetailsService {
         }
     }
 
-
-    public ResponseEntity list() {
+    public ResponseEntity findByEmail(String email) {
         Map<ERest, Object> hm = new LinkedHashMap<>();
-        try {
-            List<User> ls = userRepository.findAll();
+        Optional<User> optionalJWTUser = userRepository.findByEmailEqualsIgnoreCase(email);
+        if (optionalJWTUser.isPresent()) {
             hm.put(ERest.status, true);
-            hm.put(ERest.result, ls);
-
-        } catch (Exception e) {
+            hm.put(ERest.result, optionalJWTUser.get());
+            return new ResponseEntity(hm, HttpStatus.OK);
+        } else {
             hm.put(ERest.status, false);
-            hm.put(ERest.message, "Error:" + e);
+            hm.put(ERest.message, "Böyle bir kullanıcı yok");
+            return new ResponseEntity(hm, HttpStatus.NOT_ACCEPTABLE);
         }
-        return new ResponseEntity(hm, HttpStatus.OK);
     }
 }

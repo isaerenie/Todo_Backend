@@ -13,6 +13,7 @@ import java.util.Map;
 import java.util.function.Function;
 
 @Service
+// application.properties dosyasını okumak için kullanılır.
 @PropertySource("classpath:application.properties")
 public class JwtUtil {
 

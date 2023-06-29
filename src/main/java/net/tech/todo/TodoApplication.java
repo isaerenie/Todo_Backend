@@ -15,15 +15,15 @@ public class TodoApplication {
     public static void main(String[] args) {
         SpringApplication.run(TodoApplication.class, args);
     }
+
+    // RoleRepository sınıfını kullanarak ROLE_Admin ve ROLE_User rollerini veritabanına kaydediyoruz.
     @Bean
     public CommandLineRunner initRoles(RoleRepository roleRepository) {
         return args -> {
-            // ROLE_Admin rolünü kaydet
             Role adminRole = new Role();
             adminRole.setName("ROLE_Admin");
             roleRepository.save(adminRole);
 
-            // ROLE_User rolünü kaydet
             Role userRole = new Role();
             userRole.setName("ROLE_User");
             roleRepository.save(userRole);

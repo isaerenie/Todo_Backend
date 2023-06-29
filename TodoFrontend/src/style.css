@@ -96,3 +96,17 @@ p{
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
+#login{
+  width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-top: 10rem;
+}
+#register{
+  width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-top: 10rem;
+}

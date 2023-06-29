@@ -1,10 +1,10 @@
-import { useForm } from "react-hook-form";
-import { LoginDto } from "../../models/dto/LoginDto.ts";
+import {useForm} from "react-hook-form";
+import {LoginDto} from "../../models/dto/LoginDto.ts";
 import UserApiService from "../../services/UserApiService.ts";
-import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
-import { control } from "../../utils/control.tsx";
-import { encrypt } from "../../utils/encdecrypt.tsx";
+import {toast} from "react-toastify";
+import {useNavigate} from "react-router-dom";
+import {control} from "../../utils/control.tsx";
+import {encrypt} from "../../utils/encdecrypt.tsx";
 
 function Login() {
     const userApiService = new UserApiService();
@@ -12,7 +12,7 @@ function Login() {
     const {
         register,
         handleSubmit,
-        formState: { errors },
+        formState: {errors},
     } = useForm<LoginDto>();
 
     const onSubmit = handleSubmit((data) => {
@@ -22,7 +22,6 @@ function Login() {
                 const dt = res.data;
                 const stData = JSON.stringify(dt);
                 sessionStorage.setItem("user", encrypt(stData));
-
                 const user = control()!.result.authorities[0].authority;
                 if (user === "ROLE_User") {
                     window.location.href = "/all";
@@ -38,7 +37,7 @@ function Login() {
     return (
         <>
             {/* Login */}
-            <div className="row login mt-5">
+            <div id="login" className="row login mt-5">
                 <div className="col-md-4 offset-md-4 text-center">
                     <div className="border border-info p-4 mb-4 rounded-1 shadow">
                         <h3 className="mb-3">Login</h3>
@@ -53,7 +52,7 @@ function Login() {
                                     placeholder="Email"
                                     aria-label="Email"
                                     aria-describedby="basic-addon1"
-                                    {...register("username", { required: true })}
+                                    {...register("username", {required: true})}
                                 />
                             </div>
                             {errors.username && (
@@ -69,7 +68,7 @@ function Login() {
                                     placeholder="Password"
                                     aria-label="Password"
                                     aria-describedby="basic-addon1"
-                                    {...register("password", { required: true })}
+                                    {...register("password", {required: true})}
                                 />
                             </div>
                             {errors.password && (
