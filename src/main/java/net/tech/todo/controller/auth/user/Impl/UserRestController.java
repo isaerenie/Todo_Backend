@@ -1,7 +1,7 @@
 package net.tech.todo.controller.auth.user.Impl;
 
 import net.tech.todo.business.service.auth.UserDetailService;
-import net.tech.todo.data.entity.User;
+import net.tech.todo.data.entity.Users;
 import net.tech.todo.props.JWTLogin;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +19,7 @@ public class UserRestController {
 
     // Register
     @PostMapping("/register")
-    public ResponseEntity register(@RequestBody User user) {
+    public ResponseEntity register(@RequestBody Users user) {
         return service.register(user);
     }
 

@@ -15,5 +15,8 @@ public class PersistLink {
     // http://localhost/phpmyadmin/index.php?route=/server/databases
 
     // Swagger URL
-    // http://localhost:2222/swagger-ui/index.html
+    // http://localhost:3333/swagger-ui/index.html
+
+    // H2-Console
+    // http://localhost:3333/h2-console
 }

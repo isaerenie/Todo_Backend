@@ -4,7 +4,7 @@ function Unauthorized() {
     return (
         <div className="container">
             <div className="row">
-                <div className="col-md-12">
+                <div className="d-flex align-items-center justify-content-center vh-100">
                     <div className="error-template text-center">
                         <h1>Oops!</h1>
                         <h2>401 Unauthorized</h2>

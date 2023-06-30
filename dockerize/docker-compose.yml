@@ -1,0 +1,9 @@
+version: '3.7'
+services:
+  app:
+    container_name: todo.jar
+    image: todo.jar
+    build: ./
+    ports:
+      - "3333:3333"
+

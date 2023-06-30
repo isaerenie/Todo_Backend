@@ -1,7 +1,7 @@
 package net.tech.todo.business.service.auth;
 
 import net.tech.todo.data.entity.Role;
-import net.tech.todo.data.entity.User;
+import net.tech.todo.data.entity.Users;
 import net.tech.todo.data.repo.UserRepository;
 import net.tech.todo.props.JWTLogin;
 import net.tech.todo.util.ERest;
@@ -43,9 +43,9 @@ public class UserDetailService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<User> optionalJWTUser = userRepository.findByEmailEqualsIgnoreCase(username);
+        Optional<Users> optionalJWTUser = userRepository.findByEmailEqualsIgnoreCase(username);
         if (optionalJWTUser.isPresent()) {
-            User u = optionalJWTUser.get();
+            Users u = optionalJWTUser.get();
             // Kullanıcı bilgileri UserDetails nesnesine aktarıldı.
             UserDetails userDetails = new org.springframework.security.core.userdetails.User(
                     u.getEmail(),
@@ -73,12 +73,12 @@ public class UserDetailService implements UserDetailsService {
     }
 
     //Register metodu ile kullanıcı kayıt işlemi yapılır.
-    public ResponseEntity register(User jwtUser) {
-        Optional<User> optionalJWTUser = userRepository.findByEmailEqualsIgnoreCase(jwtUser.getEmail());
+    public ResponseEntity register(Users jwtUser) {
+        Optional<Users> optionalJWTUser = userRepository.findByEmailEqualsIgnoreCase(jwtUser.getEmail());
         Map<ERest, Object> hm = new LinkedHashMap();
         if (!optionalJWTUser.isPresent()) {
             jwtUser.setPassword(encoder().encode(jwtUser.getPassword()));
-            User user = userRepository.save(jwtUser);
+            Users user = userRepository.save(jwtUser);
             String jwtToken = jwtUtil.generateToken(loadUserByUsername(jwtUser.getEmail()));
             hm.put(ERest.jwt, jwtToken);
             hm.put(ERest.status, true);
@@ -119,7 +119,7 @@ public class UserDetailService implements UserDetailsService {
 
     public ResponseEntity findByEmail(String email) {
         Map<ERest, Object> hm = new LinkedHashMap<>();
-        Optional<User> optionalJWTUser = userRepository.findByEmailEqualsIgnoreCase(email);
+        Optional<Users> optionalJWTUser = userRepository.findByEmailEqualsIgnoreCase(email);
         if (optionalJWTUser.isPresent()) {
             hm.put(ERest.status, true);
             hm.put(ERest.result, optionalJWTUser.get());

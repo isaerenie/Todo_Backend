@@ -1,0 +1,7 @@
+# Dockerfile
+
+FROM openjdk:17
+ARG JAR_FILE_PATH=Todo-0.0.1-SNAPSHOT.jar
+ADD ${JAR_FILE_PATH} todo.jar
+ENTRYPOINT ["java","-jar","/todo.jar"]
+EXPOSE 3333
