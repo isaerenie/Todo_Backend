@@ -18,7 +18,7 @@ import java.util.Date;
 // JSON
 @JsonIgnoreProperties(value = {"created_date,updated_date"},allowGetters = true) // Json'a emir veriyoruz bunları takip etme
 @EntityListeners(AuditingEntityListener.class) // AUDITING
-@MappedSuperclass // Bu sınıftan kalıtım alan sınıfların tablo olarak oluşturulmasını engelliyoruz.
+@MappedSuperclass
 public class BaseEntity extends AuditingAwareBaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
